@@ -15,13 +15,17 @@ const priceJamaica = 120;
 const promtLabel = 'Введите страну доставки';
 
 const userInput = prompt(promtLabel);
-const userInputToLow = userInput.toLowerCase();
+let userInputToLow;
 
-// console.log(userInputToLow);
+if (userInput === null) {
+  userInputToLow = userInput;
+} else {
+  userInputToLow = userInput.toLowerCase();
+}
 
 let message;
 
-if (userInput === null) {
+if (userInputToLow === null) {
   message = 'Отменено пользователем!';
 } else {
   switch (userInputToLow) {
