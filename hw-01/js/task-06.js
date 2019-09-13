@@ -2,23 +2,18 @@
 
 let total = 0;
 let userInput;
-let userInputNumber;
 
-do {
+while (userInput !== null) {
   userInput = prompt('Введите число!');
+  const userInputNumber = Number(userInput);
 
-  userInputNumber = Number(userInput);
+  const userInputIsNan = isNaN(userInputNumber);
 
-  const userInputIsNan = Number(isNaN(userInputNumber));
-
-  if (userInputIsNan) {
-    alert('Было введено не число, попробуйте еще раз');
-
-    userInputNumber = 0;
+  if (!userInputIsNan) {
     total += userInputNumber;
   } else {
-    total += userInputNumber;
+    alert('Было введено не число, попробуйте еще раз');
   }
-} while (userInput !== null);
+}
 
 alert(`Общая сумма чисел равна ${total}`);

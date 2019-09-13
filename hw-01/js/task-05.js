@@ -6,12 +6,6 @@ const AUSTRALIA = 'австралия';
 const INDIA = 'индия';
 const JAMAICA = 'ямайка';
 
-const priceChina = 100;
-const priceChili = 250;
-const priceAustralia = 170;
-const priceIndia = 80;
-const priceJamaica = 120;
-
 const promtLabel = 'Введите страну доставки';
 
 const userInput = prompt(promtLabel);
@@ -24,34 +18,45 @@ if (userInput === null) {
 }
 
 let message;
+let country;
+let price;
+
+let text;
 
 if (userInputToLow === null) {
   message = 'Отменено пользователем!';
 } else {
   switch (userInputToLow) {
     case CHINA:
-      message = `Доставка в ${CHINA} будет стоить ${priceChina} кредитов`;
+      country = 'Китай';
+      price = 100;
+
       break;
 
     case CHILI:
-      message = `Доставка в ${CHILI} будет стоить ${priceChili} кредитов`;
+      price = 250;
+      country = 'Чили';
       break;
 
     case AUSTRALIA:
-      message = `Доставка в ${AUSTRALIA} будет стоить ${priceAustralia} кредитов`;
+      price = 170;
+      country = 'Австралию';
       break;
 
     case INDIA:
-      message = `Доставка в ${INDIA} будет стоить ${priceIndia} кредитов`;
+      price = 80;
+      country = 'Индию';
       break;
 
     case JAMAICA:
-      message = `Доставка в ${JAMAICA} будет стоить ${priceJamaica} кредитов`;
+      price = 120;
+      country = 'Ямайку';
       break;
 
     default:
       alert('В вашей стране доставка не доступна');
   }
+  message = `Доставка в ${country} будет стоить ${price} кредитов`;
 }
 
 console.log(message);
