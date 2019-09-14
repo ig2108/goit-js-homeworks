@@ -21,8 +21,6 @@ let message;
 let country;
 let price;
 
-let text;
-
 if (userInputToLow === null) {
   message = 'Отменено пользователем!';
 } else {
