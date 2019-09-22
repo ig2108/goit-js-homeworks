@@ -27,4 +27,6 @@ const summ = function(numbers) {
 
 total = summ(numbers);
 
-console.log(`Общая сумма чисел равна ${total}.`);
+const message = `Общая сумма чисел равна ${total}.`;
+
+console.log(message);

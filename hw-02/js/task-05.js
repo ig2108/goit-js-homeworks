@@ -1,20 +1,26 @@
 'use strict';
 
 function checkForSpam(string) {
-  const strLowCase = string.toLowerCase();
+  return (
+    string.toLowerCase().includes('spam') ||
+    string.toLowerCase().includes('sale')
+  );
 
-  const words = strLowCase.split(' ');
+  // Второй вариант :
+  // const strLowCase = string.toLowerCase();
 
-  let isSpam = false;
+  // const words = strLowCase.split(' ');
 
-  for (let word of words) {
-    if (word.includes('spam') || word.includes('sale')) {
-      isSpam = true;
-      break;
-    }
-  }
+  // let isSpam = false;
 
-  return isSpam;
+  // for (let word of words) {
+  //   if (word.includes('spam') || word.includes('sale')) {
+  //     isSpam = true;
+  //     break;
+  //   }
+  // }
+
+  // return isSpam;
 }
 
 let text = 'Latest technology news';

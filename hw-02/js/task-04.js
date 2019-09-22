@@ -1,15 +1,18 @@
 'use strict';
 
-const formatString = function(string) {
-  let stringFormat = string.split('');
+const formatString = function(string, value = 40) {
+  return string.length > value ? `${string.slice(0, value)}...` : string;
 
-  if (stringFormat.length > 40) {
-    stringFormat.length = 40;
-    stringFormat[40] = '...';
-  }
+  // Второй вариант (хуже):
+  // let stringFormat = string.split('');
 
-  string = stringFormat.join('');
-  return string;
+  // if (stringFormat.length > 40) {
+  //   stringFormat.length = 40;
+  //   stringFormat[40] = '...';
+  // }
+
+  // string = stringFormat.join('');
+  // return string;
 };
 
 let text = 'Curabitur ligula sapien, tincidunt non.';

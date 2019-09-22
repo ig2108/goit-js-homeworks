@@ -4,9 +4,11 @@ const priceOfGraffity = function calculateEngravingPrice(
   message,
   pricePerWord,
 ) {
-  const words = message.split(' ');
-  const totalPrice = words.length * pricePerWord;
-  return totalPrice;
+  return message.split(' ').length * pricePerWord;
+  // Второй вариант решения (хуже):
+  // const words = message.split(' ');
+  // const totalPrice = words.length * pricePerWord;
+  // return totalPrice;
 };
 
 let text = 'Proin sociis natoque et magnis parturient montes mus';
