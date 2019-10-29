@@ -78,11 +78,7 @@ console.log(getNamesSortedByFriendsCount(users));
 
 const getSortedUniqueSkills = users =>
   users
-    .reduce((allSkills, { skills }) => {
-      allSkills = [...allSkills, ...skills];
-
-      return allSkills;
-    }, [])
+    .reduce((allSkills, { skills }) => [...allSkills, ...skills], [])
     .filter((skill, index, allSkills) => allSkills.indexOf(skill) === index)
     .sort((b, a) => b.localeCompare(a, 'en'));
 
