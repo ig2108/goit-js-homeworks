@@ -3,19 +3,27 @@
 const log = function(item) {
   console.log(item);
 };
-const input = document.querySelector('input#validation-input');
-const lengthAr = document.querySelector('#validation-input[data-length="6"]');
 
-const length = lengthAr.getAttribute('data-length');
-
-const validateLength = function(event) {
-  if (event.currentTarget.value.length < length) {
-    alert('Введите не мешьне 6 символов');
-    event.currentTarget.classList.add('invalid');
-  } else {
-    event.currentTarget.classList.remove('invalid');
-    event.currentTarget.classList.add('valid');
-  }
+const refs = {
+  elem: document.querySelector('#validation-input'),
 };
 
-input.addEventListener('blur', validateLength);
+const state = {
+  valid: '',
+};
+
+const selectValidClass = (parent, length) =>
+  parent.value.length === +length ? 'valid' : 'invalid';
+
+function inputValidation() {
+  const parent = refs.elem;
+  const { length } = parent.dataset;
+  const current = selectValidClass(parent, length);
+  if (state.valid && current !== state.valid) {
+    parent.classList.remove(state.valid);
+  }
+  state.valid = current;
+  parent.classList.add(state.valid);
+}
+
+refs.elem.addEventListener('blur', inputValidation);

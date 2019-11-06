@@ -4,18 +4,13 @@ const log = function(item) {
   console.log(item);
 };
 
-const categories = document.querySelector('ul#categories');
-const items = document.querySelectorAll('li.item');
-const itemNames = document.querySelectorAll('h2.item-name');
-const itemListElements = document.querySelectorAll('.item-list');
+const categories = document.querySelector('#categories');
 
-log(`В списке ${items.length} категории`);
+const res = categories.children.length;
+log(`В списке ${res} категории`);
 
-const itemNamesCount = function(items) {
-  for (let i = 0; i < items.length; i += 1) {
-    log(`Категория: ${itemNames[i].textContent}
-    Количество элементов: ${itemListElements[i].children.length}`);
-  }
-};
+const str = [...categories.children]
+  .map(e => `${e.children[0].textContent}: ${e.children[1].children.length}`)
+  .join('\n');
 
-itemNamesCount(items);
+log(str);

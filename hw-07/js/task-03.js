@@ -22,19 +22,18 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('ul#gallery');
+const gallery = document.querySelector('#gallery');
 
 const createGallery = function(array) {
-  const galleryContainer = document.createElement('div');
-  galleryContainer.classList.add('gallery-container');
+  const items = [];
   array.map(el => {
     const galleryItem = document.createElement('li');
     galleryItem.classList.add('gallery-item');
     const image = createImg(el);
     galleryItem.append(image);
-    galleryContainer.append(galleryItem);
+    items.push(galleryItem);
   });
-  return galleryContainer;
+  return items;
 };
 
 const createImg = function(object) {
@@ -49,7 +48,9 @@ const createImg = function(object) {
   // 2 вариант
   // imgWrap.insertAdjacentHTML(
   //   'afterbegin',
-  //   `<img src="${object.url}" alt="${object.alt}" class="img">`,
+  //   `<img src="${object.url}" alt="${
+  //     object.alt
+  //   }" class="gallery-img">`,
   // );
   // const img = document.querySelector('.img');
   // // ===========================================
@@ -59,4 +60,4 @@ const createImg = function(object) {
 
 const galleryItems = createGallery(images);
 
-gallery.append(galleryItems);
+gallery.append(...galleryItems);

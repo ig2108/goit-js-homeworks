@@ -4,7 +4,7 @@ const log = function(item) {
   console.log(item);
 };
 
-const ingredientsList = document.querySelector('ul#ingredients');
+const ingredientsList = document.querySelector('#ingredients');
 
 const ingredients = [
   'Картошка',
@@ -16,16 +16,15 @@ const ingredients = [
 ];
 
 const createList = function(array) {
-  const containerList = document.createElement('div');
-  containerList.classList.add('container-list');
+  const items = [];
   array.map(el => {
     const item = document.createElement('li');
     item.textContent = el;
-    containerList.append(item);
+    items.push(item);
   });
-  return containerList;
+  return items;
 };
 
 const ingredientsItems = createList(ingredients);
 
-ingredientsList.append(ingredientsItems);
+ingredientsList.append(...ingredientsItems);

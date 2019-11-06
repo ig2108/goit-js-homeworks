@@ -4,27 +4,26 @@ const log = function(item) {
   console.log(item);
 };
 
-const value = document.querySelector('#value');
-
-let counterValue = 0;
-
-const increment = function() {
-  counterValue += 1;
-  value.textContent = counterValue;
+const refs = {
+  counter: document.querySelector('#counter'),
+  value: document.querySelector('#value'),
 };
 
-const decrement = function() {
-  counterValue -= 1;
-  value.textContent = counterValue;
+const actions = {
+  state: {
+    value: 0,
+  },
+  decrement() {
+    this.state.value -= 1;
+  },
+  increment() {
+    this.state.value += 1;
+  },
 };
 
-const incrementButton = document.querySelector(
-  'button[data-action="increment"]',
-);
+const changeValue = ({ target }) => {
+  actions[target.dataset.action]();
+  refs.value.textContent = actions.state.value;
+};
 
-const decrementButton = document.querySelector(
-  'button[data-action="decrement"]',
-);
-
-incrementButton.addEventListener('click', increment);
-decrementButton.addEventListener('click', decrement);
+refs.counter.addEventListener('click', changeValue);

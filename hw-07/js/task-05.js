@@ -4,15 +4,11 @@ const log = function(item) {
   console.log(item);
 };
 
-const input = document.querySelector('input#name-input');
-const output = document.querySelector('span#name-output');
-
-const greeting = function(event) {
-  if (event.currentTarget.value === '') {
-    output.textContent = 'незнакомец';
-  } else {
-    output.textContent = event.currentTarget.value;
-  }
+const refs = {
+  userInput: document.querySelector('#name-input'),
+  output: document.querySelector('#name-output'),
 };
 
-input.addEventListener('input', greeting);
+refs.userInput.addEventListener('input', () => {
+  refs.output.textContent = refs.userInput.value || 'незнакомец';
+});
