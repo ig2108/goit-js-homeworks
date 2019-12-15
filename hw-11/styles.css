@@ -1,0 +1,98 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.body {
+  height: 600px;
+}
+
+/* 
+Buttons color-switch ========================
+*/
+
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+
+button {
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.start-button {
+  background-color: rgb(83, 216, 83);
+}
+
+.stop-button {
+  background-color: red;
+}
+
+/* 
+Timer ====================================
+*/
+
+.timer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  height: 150px;
+  background-color: rgb(230, 230, 222);
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+.value {
+  width: 100px;
+  background-color: rgb(73, 70, 70);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 50px;
+}
+
+.label {
+  font-size: 20px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: rgb(73, 70, 70);
+}

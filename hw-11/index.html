@@ -5,14 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Homework Module 11</title>
+    <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <button type="button" data-action="start">Start</button>
-    <button type="button" data-action="stop">Stop</button>
+  <body class="body">
+    <!-- buttons color-switch -->
+    <div class="buttons">
+      <button type="button" class="button start-button" data-action="start">
+        Start
+      </button>
+      <button type="button" class="button stop-button" data-action="stop">
+        Stop
+      </button>
+    </div>
+    <!-- timer -->
+    <div class="timer" id="timer-1">
+      <div class="field">
+        <span class="value" data-value="days">11</span>
+        <span class="label">Days</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="hours">11</span>
+        <span class="label">Hours</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="mins">11</span>
+        <span class="label">Minutes</span>
+      </div>
+
+      <div class="field">
+        <span class="value" data-value="secs">11</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
     <!-- Scripts -->
     <script type="module" src="./js/color-switch.js"></script>
     <script type="module" src="./js/timer.js"></script>
-    <script type="module" src="./js/promisification.js"></script>
+    <script type="module" src="./js/promis-task01.js"></script>
+    <script type="module" src="./js/promis-task02.js"></script>
+    <script type="module" src="./js/promis-task03.js"></script>
   </body>
 </html>
